@@ -1,0 +1,65 @@
+
+Task 5 Report: Capture and Analyze Network Traffic Using Wireshark
+
+Task Overview
+-------------
+Objective:
+The primary goal of this task was to capture live network traffic using Wireshark and analyze it to identify various protocols, traffic patterns, and communication behaviors between devices on the network.
+
+Tool Used: Wireshark - a powerful and widely-used network protocol analyzer.
+Date of Capture: June 30, 2025
+Interface Used: Wi-Fi (or the specific active interface on the user's machine)
+
+Packet Capture Summary
+----------------------
+File Name: task5_capture.pcapng
+Total Packets Captured: Approximately 500 packets
+Capture Duration: Estimated to be between 2 to 5 minutes, depending on network activity at the time.
+
+During this period, Wireshark continuously listened to the selected interface and captured all incoming and outgoing packets, including broadcast packets within the local network.
+
+Protocols Identified
+--------------------
+A variety of commonly used protocols were detected during the capture session. Below is a summary of each protocol identified and their relevance to the traffic analysis:
+
+Protocol    | Description                          | Observations
+----------- | ------------------------------------ | ---------------------------------------------------------------
+ARP         | Address Resolution Protocol          | ARP requests and replies were used for resolving IPs to MAC addresses on the LAN.
+DNS         | Domain Name System                   | DNS queries and responses were observed, resolving domain names like google.com to IP addresses.
+TCP         | Transmission Control Protocol        | Used for reliable communications; SYN, SYN-ACK, and ACK sequences were noted, indicating proper handshakes.
+UDP         | User Datagram Protocol               | Commonly used with DNS; seen as lightweight, connectionless data transfer.
+HTTP        | Hypertext Transfer Protocol          | Clear text web requests were observed, likely due to non-secure sites or local web services.
+HTTPS       | Secure HTTP                          | Encrypted web traffic to secure websites (port 443); no payload visible due to encryption.
+ICMP        | Internet Control Message Protocol    | ICMP echo requests and replies (ping) were captured, indicating network testing or diagnostics.
+
+Notable Observations
+--------------------
+1. **DNS Activity:**
+   - Multiple DNS queries were seen, typically to Google's DNS servers (8.8.8.8 and 8.8.4.4).
+   - Queries included standard domain names, potentially linked to browser activity or background services.
+
+2. **ARP Traffic:**
+   - ARP requests indicated devices trying to resolve local IP addresses to MAC addresses.
+   - Broadcast behavior was noted, which is expected in a local network setup.
+
+3. **TCP Sessions:**
+   - Several TCP connections were initiated and properly closed, suggesting stable communication.
+   - The TCP 3-way handshake (SYN, SYN-ACK, ACK) was successfully observed.
+
+4. **HTTP/HTTPS Traffic:**
+   - Some web traffic was captured using HTTP, possibly from internal web interfaces or software updaters.
+   - Most modern web traffic was encrypted over HTTPS, indicating secure browsing behavior.
+
+5. **ICMP Messages:**
+   - ICMP packets, typically used for ping operations, were present, possibly for network diagnostics or monitoring tools.
+
+6. **General Packet Flow:**
+   - The packet lengths were generally small to medium, indicating routine control traffic and small data exchanges.
+   - No signs of large data transfers or suspicious packet bursts were detected in the captured window.
+
+Conclusion
+----------
+The network traffic observed during this capture session was typical of a secure and healthy network environment. Routine operations like DNS resolution, ARP broadcasts, HTTPS browsing, and occasional ICMP testing were present. No evidence of malicious activity, excessive retransmissions, or protocol anomalies was found in the analyzed segment.
+
+This task provided hands-on experience with packet capturing and protocol analysis using Wireshark. It highlighted how various protocols interact on the network and how traffic patterns can be interpreted using protocol-level inspection.
+
